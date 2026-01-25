@@ -1,6 +1,5 @@
-﻿using System;
+﻿namespace AdvancedProgramming.Leasons;
 
-namespace AdvancedProgramming;
 /*
  
 Use IDisposable when your class owns a resource that must be released explicitly, especially:
@@ -58,6 +57,9 @@ class CurrencyService : IDisposable
 
     }
 
+    // Calling Dispose() means “I am DONE with this object.”
+    // thats why we release all managed and unmanaged objects
+    
     public void Dispose()
     {
         Dispose(true);
@@ -76,3 +78,46 @@ class CurrencyService : IDisposable
 
 }
 
+/*
+ example: 
+
+using AdvancedProgramming;
+
+// 1) not recommended
+
+
+//CurrencyService service = new CurrencyService();
+//string result = service.GetCurrencies();
+//Console.WriteLine(result);
+//service.Dispose();
+
+// 2) recommended
+
+//CurrencyService service = null;
+
+//try
+//{
+//    service = new CurrencyService();
+//    string result = service.GetCurrencies();
+//    Console.WriteLine(result);
+//}
+//catch
+//{
+//    Console.WriteLine("error");
+//}
+//finally
+//{
+//    service?.Dispose();
+//}
+
+// 3) more recommended
+
+// using statement used with instaniating objects which implement IDisposable interface
+using (CurrencyService service = new CurrencyService())
+{
+    string result = service.GetCurrencies();
+    Console.WriteLine(result);
+    // dispose will be called automatically
+}
+ 
+ */

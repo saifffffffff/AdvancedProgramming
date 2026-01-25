@@ -1,16 +1,22 @@
-﻿
+﻿using AdvancedProgramming.Leasons;
 
-//using System.Security;
-//using AdvancedProgramming;
+Person person1 = new Person(null, null);
 
-//using ( CurrencyService currencyService = new CurrencyService() )
-//{
+Console.WriteLine(person1?.FirstName);
 
-//    Console.Write(currencyService.GetCurrencies());
-//}
 
-HttpClient _httpClient = new HttpClient();
-_httpClient.Dispose();
-//var result = _httpClient.GetStringAsync("https://coinbase.com/api/v2/currencies").Result;
-Console.WriteLine("result");
+class Person
+{
+    public string? FirstName { get; set; }
 
+    public string? LastName { get; set; } 
+
+    public Person(string fname , string lname)
+    {
+
+        FirstName = fname; 
+        
+        LastName = lname ?? "Y";
+
+    }
+}

@@ -7,8 +7,16 @@
       "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|c:\\development\\src\\advancedprogramming\\advancedprogramming\\idisposablepattern.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:idisposablepattern.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|c:\\development\\src\\advancedprogramming\\advancedprogramming\\leasons\\streamexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:leasons\\streamexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\bin\\Debug\\net8.0\\j.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bin\\Debug\\net8.0\\j.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\bin\\Debug\\net8.0\\b.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bin\\Debug\\net8.0\\b.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,15 +43,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IDisposablePattern.cs",
-              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\IDisposablePattern.cs",
-              "RelativeDocumentMoniker": "IDisposablePattern.cs",
-              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\IDisposablePattern.cs*",
-              "RelativeToolTip": "IDisposablePattern.cs*",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Title": "StreamExample.cs",
+              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Leasons\\StreamExample.cs",
+              "RelativeDocumentMoniker": "Leasons\\StreamExample.cs",
+              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Leasons\\StreamExample.cs",
+              "RelativeToolTip": "Leasons\\StreamExample.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T17:47:50.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T22:26:01.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "j.txt",
+              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\bin\\Debug\\net8.0\\j.txt",
+              "RelativeDocumentMoniker": "bin\\Debug\\net8.0\\j.txt",
+              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\bin\\Debug\\net8.0\\j.txt",
+              "RelativeToolTip": "bin\\Debug\\net8.0\\j.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-24T21:40:22.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "b.txt",
+              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\bin\\Debug\\net8.0\\b.txt",
+              "RelativeDocumentMoniker": "bin\\Debug\\net8.0\\b.txt",
+              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\bin\\Debug\\net8.0\\b.txt",
+              "RelativeToolTip": "bin\\Debug\\net8.0\\b.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-24T20:17:10.4Z"
             },
             {
               "$type": "Document",
@@ -53,7 +84,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Program.cs*",
               "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-24T17:19:43.386Z",
               "EditorCaption": ""

@@ -19,6 +19,10 @@ public static class NullableReferenceTypes
         public void Example1()
         {
             Person p = new Person(null, null); // warning
+            
+            string name = null;
+            
+            Console.Write(name.Length);
 
             int len1 = p.FirstName.Length; // warninig because sometimes the compiler can not see the internal code
             int len2 = p.FirstName!.Length; // overrides the warning behavioar and remove the warninig
@@ -50,7 +54,7 @@ public static class NullableReferenceTypes
             return name.Length > 10;
         }
 
-        bool IsLongNameNullable (string ? name)
+        bool IsLongNameNullable (string? name)
         {
             if (name is null) return false;
 

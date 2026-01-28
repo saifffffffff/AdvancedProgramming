@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace AdvancedProgramming.Leasons;
 
@@ -34,11 +30,11 @@ public static class StringInstantiationMethods
     
         public static void UsingPointerToSignedByte()
         {
-            // to use the unsafe block use 
-            // [4] Create a string from a pointer to a signed byte array.
-            //                'M'   'e'   't'   'i'   'g'   'a',  't',  'o'   'r'
-            sbyte[] bytes = { 0x4D, 0x65, 0x74, 0x69, 0x67, 0x61, 0x74, 0x6F, 0x72 };
-            string str = null;
+        // to use the unsafe block use <AllowUnsafeBlocks>true</AllowUnsafeBlocks> in the project set up
+        // [4] Create a string from a pointer to a signed byte array.
+        //                'M'   'e'   't'   'i'   'g'   'a',  't',  'o'   'r'
+        sbyte[] bytes = { 0x4D, 0x65, 0x74, 0x69, 0x67, 0x61, 0x74, 0x6F, 0x72 };
+            string? str = null;
             // safe context (use pointer, allocation memory block,
             // call method using function pointer
             unsafe
@@ -130,24 +126,24 @@ Shipping cost {shippingCost:c}.
     }
     
         public static void UsingRawString()
-    {
-        // Raw string starting from C# 11.0 
-        string str = """
-                    <nav class="box">
-                        <ul>
-                            <a href="javascript:void(0)">"Home"</a>
-                        <li>
-                        <ul>
-                            <a href="javascript:void(0)">About us</a>
-                        <li>
-                    </nav>
-                """;
+        {    
+            // Raw string starting from C# 11.0 
+            string str = """
+                        <nav class="box">
+                            <ul>
+                                <a href="javascript:void(0)">"Home"</a>
+                            <li>
+                            <ul>
+                                <a href="javascript:void(0)">About us</a>
+                            <li>
+                        </nav>
+                    """;
+            
+            string str2 = """ this is a single line raw string""";
+            Console.WriteLine(str);
+            Console.WriteLine(str2);
 
-        string str2 = """ this is a single line raw string""";
-        Console.WriteLine(str);
-        Console.WriteLine(str2);
-
-    }
+        }
 
 
 }

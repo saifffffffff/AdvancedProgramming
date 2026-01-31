@@ -1,5 +1,5 @@
 ﻿
-namespace AdvancedProgramming.Leasons;
+namespace AdvancedProgramming.Lessons;
 
 static class StreamExample {
     

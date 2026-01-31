@@ -1,28 +1,68 @@
 ﻿
-using AdvancedProgramming.Leasons;
+using System.Numerics;
+using System.Text;
+using AdvancedProgramming.Lessons;
 
-string name = "saif";
+class program
+{
+    class Person
+    {
 
-string name2 = "saif";
+    }
+    struct car
+    {
+        public int wheels;
+        public int body;
+        public Person driver;
+    }
 
-string name3 = new string("saif");
+    public static void Main ()
+    {
+        car c = new car ();
+        c.wheels = 2;
+        c.body = 2;
+        c.driver = new Person();
+        //c.wheels = 2;
 
-Console.WriteLine(string.IsInterned(name3));
-
-
-bool isRefEqual = string.ReferenceEquals(name, name2);
-bool isRefEqual2 = string.ReferenceEquals(name3 , name2);
-
-Console.WriteLine(isRefEqual);
-Console.WriteLine(isRefEqual2);
-
-
-
-
-
-
+        car c2 = new car();
+        c2.wheels = 2;
+        c2.body= 2;
+        c.driver = new Person();
+        
+        //c.wheels = 2;
 
 
+        if (c.Equals(c2))
+            Console.WriteLine("Equals");
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//for (int i = 0; i <= 8; i ++)
+//    Console.WriteLine(name.Substring(0, i));
 
 
 

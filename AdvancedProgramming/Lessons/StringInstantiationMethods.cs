@@ -1,6 +1,6 @@
 ﻿
 
-namespace AdvancedProgramming.Leasons;
+namespace AdvancedProgramming.Lessons;
 
 public static class StringInstantiationMethods
 {

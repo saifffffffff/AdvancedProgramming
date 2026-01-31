@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AdvancedProgramming.Leasons;
+namespace AdvancedProgramming.Lessons;
 
 public static class StringDeepDive
 {

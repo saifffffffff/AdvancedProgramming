@@ -1,4 +1,4 @@
-﻿namespace AdvancedProgramming.Leasons;
+﻿namespace AdvancedProgramming.Lessons;
 
 /*
  

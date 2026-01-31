@@ -7,7 +7,8 @@ class program
 {
     class Person
     {
-
+        public string? Name;
+        public string? Address;
     }
     struct car
     {
@@ -18,22 +19,21 @@ class program
 
     public static void Main ()
     {
-        car c = new car ();
-        c.wheels = 2;
-        c.body = 2;
-        c.driver = new Person();
-        //c.wheels = 2;
-
-        car c2 = new car();
-        c2.wheels = 2;
-        c2.body= 2;
-        c.driver = new Person();
         
-        //c.wheels = 2;
+        Person person = new Person ();
+
+        person.Name = "saif";
+        person.Address = "123 street";
+
+        Console.WriteLine(person.GetHashCode());
+
+        Person person2 = new Person ();
+        person2.Name = "khaled";
+        person2.Address = "123 shallow street";
+
+        Console.WriteLine(person2.GetHashCode());
 
 
-        if (c.Equals(c2))
-            Console.WriteLine("Equals");
     }
 
 

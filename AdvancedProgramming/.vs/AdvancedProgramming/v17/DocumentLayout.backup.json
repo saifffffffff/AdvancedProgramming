@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|c:\\development\\src\\advancedprogramming\\advancedprogramming\\lessons\\overrideequals_overridegethashcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:lessons\\overrideequals_overridegethashcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|c:\\development\\src\\advancedprogramming\\advancedprogramming\\lessons\\stringbuilderimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:lessons\\stringbuilderimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,14 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OverrideEquals_OverrideGetHashcode.cs",
-              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\OverrideEquals_OverrideGetHashcode.cs",
-              "RelativeDocumentMoniker": "Lessons\\OverrideEquals_OverrideGetHashcode.cs",
-              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\OverrideEquals_OverrideGetHashcode.cs",
-              "RelativeToolTip": "Lessons\\OverrideEquals_OverrideGetHashcode.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAowF8AAAAJAAAAAAAAAA==",
+              "Title": "StringBuilderImplementation.cs",
+              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\StringBuilderImplementation.cs",
+              "RelativeDocumentMoniker": "Lessons\\StringBuilderImplementation.cs",
+              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\StringBuilderImplementation.cs",
+              "RelativeToolTip": "Lessons\\StringBuilderImplementation.cs",
+              "ViewState": "AgIAAFAKAAAAAAAAAAAgwNUKAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T18:25:19.763Z",
+              "WhenOpened": "2026-02-02T21:55:17.089Z",
               "EditorCaption": ""
             },
             {
@@ -53,7 +53,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Program.cs*",
               "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAtwBwAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAgwF4AAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-31T13:02:40.912Z",
               "EditorCaption": ""

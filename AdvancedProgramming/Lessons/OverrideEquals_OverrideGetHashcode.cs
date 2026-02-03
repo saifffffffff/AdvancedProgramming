@@ -9,7 +9,7 @@ public static class OverrideEquals_OverrideGetHashcode
     /// Equal the .GetHashCode() will return a reference based integer
     /// which will make dealing with this object is broken
     /// </summary>
-    class Person_1 
+    public class Person_1 
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -33,7 +33,7 @@ public static class OverrideEquals_OverrideGetHashcode
 
     }
 
-    class Person_2
+    public class Person_2
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -66,7 +66,7 @@ public static class OverrideEquals_OverrideGetHashcode
 
     // using the IEquatable interface
 
-    class Person_3 : IEquatable<Person_3>
+    public class Person_3 : IEquatable<Person_3>
     {
         public int Id { get; set; }
         public string Name { get; set; }

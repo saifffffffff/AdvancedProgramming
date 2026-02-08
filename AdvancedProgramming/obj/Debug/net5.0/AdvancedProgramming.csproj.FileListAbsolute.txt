@@ -1,0 +1,5 @@
+C:\development\src\AdvancedProgramming\AdvancedProgramming\obj\Debug\net5.0\AdvancedProgramming.GeneratedMSBuildEditorConfig.editorconfig
+C:\development\src\AdvancedProgramming\AdvancedProgramming\obj\Debug\net5.0\AdvancedProgramming.AssemblyInfoInputs.cache
+C:\development\src\AdvancedProgramming\AdvancedProgramming\obj\Debug\net5.0\AdvancedProgramming.AssemblyInfo.cs
+C:\development\src\AdvancedProgramming\AdvancedProgramming\obj\Debug\net5.0\AdvancedProgramming.csproj.CoreCompileInputs.cache
+C:\development\src\AdvancedProgramming\AdvancedProgramming\obj\Debug\net5.0\AdvancedProgramming.sourcelink.json

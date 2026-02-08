@@ -43,7 +43,6 @@ class CurrencyService : IDisposable
     {
         if (_disposed)
             return;
-        
         if ( disposing)
         {
             _httpClient?.Dispose();

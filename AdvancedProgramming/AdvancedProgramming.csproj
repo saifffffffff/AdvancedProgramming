@@ -5,7 +5,23 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>    
   </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <Reference Include="DVLD_Application">
+      <HintPath>..\..\..\..\Users\tareq\Desktop\DVLD_System\DVLD.Presentation\bin\Debug\DVLD_Application.dll</HintPath>
+    </Reference>
+    <Reference Include="DVLD_WindowsForms">
+      <HintPath>..\..\..\..\Users\tareq\Desktop\DVLD_System\DVLD.Presentation\bin\Debug\DVLD_WindowsForms.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\names.json" />
+    <EmbeddedResource Include="Assets\TextFile1.txt" />
+  </ItemGroup>
 
 </Project>

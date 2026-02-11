@@ -29,7 +29,7 @@ namespace AdvancedProgramming.Lessons
         public static void CurrentAssemblyManifestDetailes()
         {
             AssemblyName assemblyName = Assembly.GetExecutingAssembly().GetName();
-            
+
             Console.WriteLine($"Name: {assemblyName.Name}");
             Console.WriteLine($"Version: {assemblyName.Version}");
             Console.WriteLine($"Culture: {assemblyName.CultureInfo}");
@@ -48,30 +48,65 @@ namespace AdvancedProgramming.Lessons
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
 
-            using Stream? stream = assembly.GetManifestResourceStream($"AdvancedProgramming.Assets.{embeddedResourceName}");
+            using (Stream? stream = assembly.GetManifestResourceStream($"AdvancedProgramming.Assets.{embeddedResourceName}"))
+            {
+                return stream ?? throw new Exception("Resource not found");
+            }
 
-            return stream ?? throw new Exception("Resource not found");
+            
+        }
 
+
+        public static void WriteAssemblyInfoToConsole(Assembly assembly )
+        {
+            AssemblyName assemblyName = assembly.GetName();
+            Console.WriteLine($"Name : {assemblyName.Name}");
+            Console.WriteLine($"Version : {assemblyName.Version}");
+            Console.WriteLine($"Path : {assemblyName.CodeBase}");
+            Console.WriteLine($"Hash Algorithm : {assemblyName.HashAlgorithm}");
+            
         }
 
         public static void WriteEmbeddedResourceToConsole(string embeddedResourceName = "names.json")
         {
-            using Stream stream = GetEmbeddedResourceStream(embeddedResourceName);
-
-            StreamReader reader = new StreamReader(stream);
-
-            int ByteRead = 0;
-            while ((ByteRead = reader.Read()) != -1)
+            using Stream stream = GetEmbeddedResourceStream(embeddedResourceName); 
             {
-                Console.Write((char)ByteRead);
-                Thread.Sleep(100);
+                StreamReader reader = new StreamReader(stream);
+                int ByteRead = 0;
+                while ((ByteRead = reader.Read()) != -1)
+                {
+                    Console.Write((char)ByteRead);
+                    Thread.Sleep(100);
+                }
             }
+
         }
-    
-        public static void 
+
+        public static void WriteEmbeddedResourceNamesToConsole()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+
+            string[] resourceNames = assembly.GetManifestResourceNames();
+
+            foreach (string resourceName in resourceNames)
+            {
+                Console.WriteLine(resourceName);
+            }
+
+        }
+
+        public static void WriteEmbeddedResourceInfoToConsole()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            var manifestInfo = assembly.GetManifestResourceInfo("AdvancedProgramming.Assets.names.json");
+
+            Console.WriteLine($"Name : {manifestInfo?.FileName} ");
+            Console.WriteLine($"Location : {manifestInfo!.ResourceLocation.ToString()}");
 
 
-    
-    
+
+
+
+        }
     }
 }

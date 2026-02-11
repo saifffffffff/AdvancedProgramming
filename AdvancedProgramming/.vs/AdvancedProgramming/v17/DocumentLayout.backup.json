@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|c:\\development\\src\\advancedprogramming\\advancedprogramming\\lessons\\reflection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:lessons\\reflection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|c:\\development\\src\\advancedprogramming\\advancedprogramming\\lessons\\assemblyprogrammatically.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:lessons\\assemblyprogrammatically.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|c:\\development\\src\\advancedprogramming\\advancedprogramming\\assets\\names.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:assets\\names.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|c:\\development\\src\\advancedprogramming\\advancedprogramming\\lessons\\streamexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4725163-F540-44FA-A1B7-36A04E2719B5}|AdvancedProgramming.csproj|solutionrelative:lessons\\streamexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,40 +39,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "names.json",
-              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Assets\\names.json",
-              "RelativeDocumentMoniker": "Assets\\names.json",
-              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Assets\\names.json",
-              "RelativeToolTip": "Assets\\names.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-07T17:21:15.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StreamExample.cs",
-              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\StreamExample.cs",
-              "RelativeDocumentMoniker": "Lessons\\StreamExample.cs",
-              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\StreamExample.cs",
-              "RelativeToolTip": "Lessons\\StreamExample.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T17:15:25.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "AssemblyProgrammatically.cs",
               "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\AssemblyProgrammatically.cs",
               "RelativeDocumentMoniker": "Lessons\\AssemblyProgrammatically.cs",
               "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\AssemblyProgrammatically.cs",
               "RelativeToolTip": "Lessons\\AssemblyProgrammatically.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAUwCUAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAACIAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T13:58:15.563Z",
+              "WhenOpened": "2026-02-08T13:43:01.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Reflection.cs",
+              "DocumentMoniker": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\Reflection.cs",
+              "RelativeDocumentMoniker": "Lessons\\Reflection.cs",
+              "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Lessons\\Reflection.cs",
+              "RelativeToolTip": "Lessons\\Reflection.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwG4AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T13:36:28.224Z",
               "EditorCaption": ""
             },
             {
@@ -87,7 +69,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\development\\src\\AdvancedProgramming\\AdvancedProgramming\\Program.cs*",
               "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAUwB8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAqwJQAAAC1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-31T13:02:40.912Z",
               "EditorCaption": ""

@@ -1,82 +1,109 @@
 ﻿
-using System.Diagnostics.CodeAnalysis;
-using System.Text;
-using AdvancedProgramming.Lessons;
-using static AdvancedProgramming.Lessons.OverridingTheObjectClassMethods;
-using DVLD_Application.Entities;
-using System.IO;
+using System.Diagnostics;
 using System.Reflection;
+using System.Data;
+using AdvancedProgramming.Lessons;
 
 class Program
 {
-    
-    
 
 
+
+    internal record Person(string FullName, int Age, string Address);
+    internal record Employee(string FullName, int Age, string Address, decimal Salary) : Person(FullName, Age, Address)
+    {
+        public Employee() : this(default, default, default, default) { }
+        public event Action? OnSalaryPaid;
+        public enum Role { Junior, Mid, Senior, TeamLeader, ProjectManager, SolutionArchetict }
+
+        public Employee IncreaseSalary(decimal increment)
+        {
+            if (increment + Salary > 10000) throw new Exception("Salary Exceed busniss rules");
+
+            return new Employee(FullName, Age, Address, Salary + increment);
+        }
+    };
+
+
+    class AddressDto
+    {
+        public string Street { get; set; }
+        public string BuildingNo { get; set; }
+    }
+    
+    class EmployeeDto
+    {
+        public AddressDto Address { get; set; }
+
+        public int key;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public decimal Salary { get; set; }
+
+        public enum Role { Junior, Mid, Sernior }
+
+        public Role TechRole { get; set; }
+
+    }
+
+    class AddressModel
+    {
+        public string Street { get; set; }
+        public string BuildingNo { get; set; }
+    }
+    
+    class EmployeeModel
+    {
+        public AddressModel Address { get; set; }
+
+        public int key;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public decimal Salary { get; set; }
+
+        public enum Role { Junior, Mid, Sernior }
+
+        public Role TechRole { get; set; }
+
+        private void CalculateSalary()
+        {
+            Console.WriteLine("Calculated");
+        }
+    }
+
+    class CheckAttribute : Attribute
+    {
+
+    }
+    class Processor
+    {
+        [ObsoleteAttribute("Use ProcessV2 instead", true)]
+        public static void Process()
+        {
+            Thread.Sleep(1000);
+            Console.WriteLine("Processing...");
+        }
+
+        [CheckAttribute]
+        public static void ProcessV2()
+        {
+            Console.WriteLine("Processing...");
+        }
+    }
 
     public static void Main()
     {
-
-        Assembly assembly = Assembly.GetExecutingAssembly();
-        Stream? stream = assembly.GetManifestResourceStream("AdvancedProgramming.Assets.names.json");
-
-        StreamReader reader = new StreamReader(stream);
-
-        int byteRead = 0;
-        while ( (byteRead = reader.Read())  != -1)
-        {
-            Console.Write((char)byteRead);
-            Thread.Sleep(300);
-        }
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
+       //ObsoleteAttribute attribute = new ObsoleteAttribute();
+        // Processor.Process();
 
 
 
     }
 
-
+}
     
 
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//for (int i = 0; i <= 8; i ++)
-//    Console.WriteLine(name.Substring(0, i));
 
 
 

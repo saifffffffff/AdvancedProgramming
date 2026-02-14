@@ -3,98 +3,113 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Data;
 using AdvancedProgramming.Lessons;
+using System.Text.Json;
+using System.Net.Cache;
+using System.Net.Http.Headers;
 
 class Program
 {
 
-
-
-    internal record Person(string FullName, int Age, string Address);
-    internal record Employee(string FullName, int Age, string Address, decimal Salary) : Person(FullName, Age, Address)
-    {
-        public Employee() : this(default, default, default, default) { }
-        public event Action? OnSalaryPaid;
-        public enum Role { Junior, Mid, Senior, TeamLeader, ProjectManager, SolutionArchetict }
-
-        public Employee IncreaseSalary(decimal increment)
-        {
-            if (increment + Salary > 10000) throw new Exception("Salary Exceed busniss rules");
-
-            return new Employee(FullName, Age, Address, Salary + increment);
-        }
-    };
-
-
-    class AddressDto
-    {
-        public string Street { get; set; }
-        public string BuildingNo { get; set; }
-    }
     
-    class EmployeeDto
+    class RangeAttribute : Attribute
     {
-        public AddressDto Address { get; set; }
 
-        public int key;
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public decimal Salary { get; set; }
+        public int Max { get; set; }
+        public int Min { get; set; }
 
-        public enum Role { Junior, Mid, Sernior }
 
-        public Role TechRole { get; set; }
 
-    }
-
-    class AddressModel
-    {
-        public string Street { get; set; }
-        public string BuildingNo { get; set; }
-    }
-    
-    class EmployeeModel
-    {
-        public AddressModel Address { get; set; }
-
-        public int key;
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public decimal Salary { get; set; }
-
-        public enum Role { Junior, Mid, Sernior }
-
-        public Role TechRole { get; set; }
-
-        private void CalculateSalary()
+        public RangeAttribute(int min, int max)
         {
-            Console.WriteLine("Calculated");
+            this.Max = max;
+            this.Min = min;
+        }
+
+        public bool IsValid(object? obj)
+        {
+            if (obj is null) return false;
+            
+            var value = (int)obj;
+            
+            return value <= Max && value >= Min;
+            
+            
+        }
+        
+
+    }
+
+    class Employee
+    {
+
+        [Range(400 , 5000)]
+        public int Salary { get; init; }
+
+        [Range(22 , 65)]
+        public int Age { get; init; }
+
+        public string Name { get; set; }
+
+
+
+
+    }
+
+    static public void Validate(object ? obj)
+    {
+        var properties = obj.GetType().GetProperties();
+
+        foreach (var property in properties)
+        {
+
+            var attr = property.GetCustomAttribute<RangeAttribute>();
+
+            if (attr != null)
+            {
+                if (!attr.IsValid(property.GetValue(obj)))
+                {
+                    Console.WriteLine($"Class Type : {obj.GetType().Name}\tProperty : {property.Name}\tValue : {property.GetValue(obj)}");
+                }
+
+
+            }
+
         }
     }
 
-    class CheckAttribute : Attribute
+    class PersonModel
     {
+        [Required]
+        public string FirstName { get; init; }
 
+        [Required]
+        public string LastName { get; init; }
+
+        [Range(18 , 55)]
+        public int Age { get; init; }
+
+        [Pattern("aaa@gmail.com")]
+        public string Email { get; init;  }
     }
-    class Processor
-    {
-        [ObsoleteAttribute("Use ProcessV2 instead", true)]
-        public static void Process()
-        {
-            Thread.Sleep(1000);
-            Console.WriteLine("Processing...");
-        }
-
-        [CheckAttribute]
-        public static void ProcessV2()
-        {
-            Console.WriteLine("Processing...");
-        }
-    }
-
     public static void Main()
     {
-       //ObsoleteAttribute attribute = new ObsoleteAttribute();
-        // Processor.Process();
+        
+
+        var person = new PersonModel { FirstName = null, LastName = "saif", Age = 15, Email = "aaa@gmail.com" };
+
+        List<Error> errors = new List<Error>();
+        if (!Validator.Validate(person, errors))
+        {
+            foreach (var error in errors)
+            {
+                Console.WriteLine(error);
+            }
+        }
+
+
+
+
+
 
 
 

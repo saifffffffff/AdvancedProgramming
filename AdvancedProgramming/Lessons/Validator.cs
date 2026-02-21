@@ -10,39 +10,43 @@ using System.Threading.Tasks;
 namespace AdvancedProgramming.Lessons
 {
 
-    abstract class ValidationAttribute
+    
+    abstract class ValidationAttribute : Attribute
     {
         
         public abstract string Details { get;  }
+    
         public abstract bool IsValid(object? obj);
 
     }
-
+    
+    
 
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
-    class RequiredAttribute : Attribute
+    class RequiredAttribute : ValidationAttribute
     {
-        public string Details { get; } = "Required Field/Property";
+        
+        public override string Details => "Required Field/Property";
 
-        public bool IsValid(object obj)
+        public override bool IsValid(object? obj)
         {
-            if ( obj is null) return false; 
+            if (obj is null) return false; // Nullable<> , referenceType
 
-            if (obj.GetType().IsValueType) return true;
-            
-            return obj != null;
+            if (obj is string s) return string.IsNullOrEmpty(s);
 
+            return true ;
         }
+    
     }
 
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
-    class RangeAttribute: Attribute
+    class RangeAttribute: ValidationAttribute
     {
         public int Maximum { get; set; }
 
         public int Minimum { get; set; }
 
-        public string Details { get;  }
+        public override string Details { get; }
 
         public RangeAttribute(int maximum, int minimum)
         {
@@ -51,23 +55,23 @@ namespace AdvancedProgramming.Lessons
             Details = $"Range Must Be Between {minimum}-{maximum}";
         }
 
-        public bool IsValid(object obj)
+        
+        public override bool IsValid(object? obj)
         {
             int value = (int)obj;
 
             return value <= Maximum && value >= Minimum;
         }
-
-
     }
 
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = true)]
-    class PatternAttribute : Attribute
+    class PatternAttribute : ValidationAttribute 
     {
+
         public string Pattern { get { return _regex.ToString(); } }
         
-        public string Details { get; }
-        
+        public override string Details { get; } 
+
         private Regex _regex;
 
         public PatternAttribute(string pattern)
@@ -76,16 +80,17 @@ namespace AdvancedProgramming.Lessons
             Details = $"Pattern Must Be {pattern}";
         }
 
-        public bool IsValid(object obj)
+        public override bool IsValid(object? obj)
         {
-            if (obj is null ) return false;
+            if (obj is null) return false;
 
-            string pattern = obj.ToString();
+            if (obj is string str)
+                return _regex.IsMatch(str);
 
-            return _regex.IsMatch(pattern);
+            return false;
+
 
         }
-
     }
 
     class Error
@@ -110,7 +115,7 @@ namespace AdvancedProgramming.Lessons
 
 
         // C#
-        public static bool Validate(object? obj, List<Error>? errors = null)
+        public static bool Validate(object? obj,List<Error>? errors = null)
         {
             if (obj is null) return false;
             bool isValid = true;
@@ -118,7 +123,8 @@ namespace AdvancedProgramming.Lessons
 
             foreach (var property in properties)
             {
-                var attrs = property.GetCustomAttributes();
+                var attrs = property.GetCustomAttributes<ValidationAttribute>();
+                
                 if (attrs is null) continue;
 
                 foreach (var attr in attrs)

@@ -6,112 +6,49 @@ using AdvancedProgramming.Lessons;
 using System.Text.Json;
 using System.Net.Cache;
 using System.Net.Http.Headers;
+using System.ComponentModel.DataAnnotations;
 
 class Program
 {
 
     
-    class RangeAttribute : Attribute
+    
+
+
+   
+
+    public static void method()
     {
-
-        public int Max { get; set; }
-        public int Min { get; set; }
-
-
-
-        public RangeAttribute(int min, int max)
-        {
-            this.Max = max;
-            this.Min = min;
-        }
-
-        public bool IsValid(object? obj)
-        {
-            if (obj is null) return false;
-            
-            var value = (int)obj;
-            
-            return value <= Max && value >= Min;
-            
-            
-        }
-        
+        Thread.Sleep(5000);
 
     }
 
-    class Employee
-    {
-
-        [Range(400 , 5000)]
-        public int Salary { get; init; }
-
-        [Range(22 , 65)]
-        public int Age { get; init; }
-
-        public string Name { get; set; }
-
-
-
-
-    }
-
-    static public void Validate(object ? obj)
-    {
-        var properties = obj.GetType().GetProperties();
-
-        foreach (var property in properties)
-        {
-
-            var attr = property.GetCustomAttribute<RangeAttribute>();
-
-            if (attr != null)
-            {
-                if (!attr.IsValid(property.GetValue(obj)))
-                {
-                    Console.WriteLine($"Class Type : {obj.GetType().Name}\tProperty : {property.Name}\tValue : {property.GetValue(obj)}");
-                }
-
-
-            }
-
-        }
-    }
-
-    class PersonModel
-    {
-        [Required]
-        public string FirstName { get; init; }
-
-        [Required]
-        public string LastName { get; init; }
-
-        [Range(18 , 55)]
-        public int Age { get; init; }
-
-        [Pattern("aaa@gmail.com")]
-        public string Email { get; init;  }
-    }
     public static void Main()
     {
+
+
+        var timer = new Stopwatch();
+        timer.Start();
         
-
-        var person = new PersonModel { FirstName = null, LastName = "saif", Age = 15, Email = "aaa@gmail.com" };
-
-        List<Error> errors = new List<Error>();
-        if (!Validator.Validate(person, errors))
+        for (int i = 0; i < 10; i++)
         {
-            foreach (var error in errors)
-            {
-                Console.WriteLine(error);
-            }
+            new Thread(method).Start();
         }
+        
+        Thread.Sleep(10000);
+        timer.Stop();
+        Console.WriteLine( ( timer.Elapsed.TotalNanoseconds - TimeSpan.FromSeconds(10).TotalNanoseconds ) / 1_000_000_000);
+        
+        Console.WriteLine("- - - - - - - - - - - - - - - - -  - - - -");
 
-
-
-
-
-
-
+        timer.Restart();
+        timer.Start();
+        for (int i = 0; i < 10; i++)
+            ThreadPool.QueueUserWorkItem((obj) => { method(); });
+        
+        Thread.Sleep(10000);
+        timer.Stop();
+        Console.WriteLine((timer.Elapsed.TotalNanoseconds - TimeSpan.FromSeconds(10).TotalNanoseconds ) / 1_000_000_000);
 
     }
 

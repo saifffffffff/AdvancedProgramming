@@ -8,19 +8,12 @@
 	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>    
   </PropertyGroup>
 
-
-
   <ItemGroup>
-    <Reference Include="DVLD_Application">
-      <HintPath>..\..\..\..\Users\tareq\Desktop\DVLD_System\DVLD.Presentation\bin\Debug\DVLD_Application.dll</HintPath>
-    </Reference>
-    <Reference Include="DVLD_WindowsForms">
-      <HintPath>..\..\..\..\Users\tareq\Desktop\DVLD_System\DVLD.Presentation\bin\Debug\DVLD_WindowsForms.exe</HintPath>
-    </Reference>
+    <EmbeddedResource Include="Assets\names.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Assets\names.json" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.5" />
   </ItemGroup>
 
 </Project>

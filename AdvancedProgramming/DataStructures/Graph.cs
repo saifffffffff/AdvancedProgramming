@@ -15,12 +15,35 @@ internal class Vertex<T>
     
 }
 
-internal class Graph<T>
+
+interface IGraph<T>
+{
+    
+    public IReadOnlyList<Vertex<T>> Vertices { get; }
+    
+    public void AddEdge(Vertex<T> vertex1, Vertex<T> vertex2, int weight = 1);
+
+    public bool IsVertexIncludedInGraph(Vertex<T> vertex);
+
+    public bool EdgeExists(Vertex<T> vertex1, Vertex<T> vertex2);
+
+    public int GetOutDegreeOfVertex(Vertex<T> vertex);
+
+    public int GetInDegreeOfVertex(Vertex<T> vertex);
+
+    public List<Vertex<T>> ? GetChildren(Vertex<T> vertex);
+
+
+}
+
+internal class Graph<T> : IGraph<T>
 {
 
     private int[,] _adjacencyMatrix;
     private GraphDirectionType _directionType;
-    private List<Vertex<T>> _vertices { get; }
+    private List<Vertex<T>> _vertices;
+    
+    public IReadOnlyList<Vertex<T>> Vertices => _vertices;
 
     public Graph(GraphDirectionType directionType , params Vertex<T>[] vertices ) : this(vertices.ToList() , directionType) { }
 
@@ -49,9 +72,6 @@ internal class Graph<T>
 
     public bool IsVertexIncludedInGraph(Vertex<T> vertex) => IsVertexIncludedInGraph(vertex, out int temp);
     
-    private bool IsVertexIncludedInGraph(Vertex<T> vertex, out int index) => (index = _vertices.IndexOf(vertex)) != -1 ? true : false;
-
-
     public bool EdgeExists(Vertex<T> vertex1, Vertex<T> vertex2)
     {
         if (!IsVertexIncludedInGraph(vertex1, out int index1) || !IsVertexIncludedInGraph(vertex2 , out int index2))
@@ -61,6 +81,7 @@ internal class Graph<T>
 
         
     }
+
     public int GetOutDegreeOfVertex(Vertex<T> vertex)
     {
         if (!IsVertexIncludedInGraph(vertex, out int index))
@@ -74,6 +95,8 @@ internal class Graph<T>
         return outDegree; 
 
     }
+    
+    bool IsVertexIncludedInGraph(Vertex<T> vertex, out int index) => (index = _vertices.IndexOf(vertex)) != -1 ? true : false;
 
     public int GetInDegreeOfVertex(Vertex<T> vertex)
     {
@@ -100,15 +123,31 @@ internal class Graph<T>
             Console.WriteLine();
         }
     }
+
+    public List<Vertex<T>>? GetChildren(Vertex<T> vertex)
+    {
+        if (!IsVertexIncludedInGraph(vertex)) return null; 
+
+        int index = _vertices.IndexOf(vertex);
+        
+        List<Vertex<T>>? children = new List<Vertex<T>>();
+        
+        for ( int i  = 0; i < _vertices.Count; i ++ )
+            if ( _adjacencyMatrix[index , i] == 1 ) 
+                children.Add(_vertices[i]);
+
+        return children;
+    }
 }
 
 
-internal class GraphAdjList<T>
+internal class GraphAdjList<T> : IGraph<T>
 {
 
     
     Dictionary<Vertex<T>, List<KeyValuePair< Vertex<T> , int > >> _adjacencyList = new ();
 
+    public IReadOnlyList<Vertex<T>> Vertices => _adjacencyList.Select(pair => pair.Key).ToList();
 
     public GraphAdjList( params Vertex<T> [] vertices) :this(vertices.ToList()) { }
     
@@ -143,6 +182,12 @@ internal class GraphAdjList<T>
         return InDegree;
     }
 
+    public List<Vertex<T>>? GetChildren ( Vertex<T> vertex )
+    {
+        return _adjacencyList[vertex].Select(x => x.Key).ToList();
+    }
+
+
     public bool EdgeExists(Vertex<T> vertex1 , Vertex<T> vertex2  )
     {
         if ( IsVertexIncludedInGraph(vertex1 ) && IsVertexIncludedInGraph(vertex2))
@@ -170,6 +215,7 @@ internal class GraphAdjList<T>
         foreach ( var pair in _adjacencyList )
             Console.WriteLine(pair.Key + " : " + string.Join( "->", pair.Value));
     }
+    
 
 
 

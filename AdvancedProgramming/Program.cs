@@ -1,6 +1,7 @@
 ﻿
 using AdvancedProgramming.Algorithms;
 using AdvancedProgramming.DataStructures;
+using AdvancedProgramming.SOLID.LiskovSubistitutionPrinciple.Before;
 using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Diagnostics;
@@ -68,27 +69,11 @@ class Program
     public static async Task Main()
     {
 
-        MyPriorityQueue<string, int> queue = new MyPriorityQueue<string, int>();
-
-        queue.Add("saif", 1);
-        queue.Add("ahmad", 3);
-        queue.Add("sara", 6);
-        queue.Add("nasser", 2);
+        var account = new FixedDepositAccount("saif" , 1000m);
 
 
-        Console.WriteLine(queue.Serve());
-        Console.WriteLine(queue.Serve());
-        Console.WriteLine(queue.Serve());
-        Console.WriteLine(queue.Serve());
 
-
-        List<Person> people = new List<Person> { new Person { name = "saif" }, new Person { name = "khaled" }, new Person { name = "Nasser" } };
-
-        people.Sort();
-
-        foreach ( var p in people)
-            Console.WriteLine(p.name);
-
+        account.Withdraw(100);
     }
 
 
